@@ -5,10 +5,11 @@ plugins {
 }
 
 apply plugin: "jacoco"
+apply plugin: 'checkstyle'
 
 group = 'ca.innovatrix'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '8'
 
 repositories {
 	mavenCentral()
@@ -31,4 +32,8 @@ jacocoTestCoverageVerification {
                }
           }
      }
+}
+
+checkstyle {
+     checkstyleTest.enabled = false
 }
