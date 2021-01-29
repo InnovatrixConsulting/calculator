@@ -34,4 +34,12 @@ pipeline {
 			}
 		}		          
      }
+	post {
+		always {
+			mail to: 'RichardLebel3000@gmail.com',
+			subject: "Completed Pipeline: ${currentBuild.fullDisplayName}",
+			body: "Your build completed, please check: ${env.BUILD_URL}"
+		}
+	}
+     
 }
